@@ -1,7 +1,17 @@
 <html>
 <body>
 <h1>Hello World</h1>
-<h2>Hello Hackathon!</h2>
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<h2 id="app">
+  {{ message }}
+</h2>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Hackathon!'
+  }
+})
+</script>
 </body>
 </html>
