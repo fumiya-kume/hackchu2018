@@ -1,3 +1,7 @@
+body{
+	background-color: #eeeeff;
+}
+
 #area1{
 	background-color: red;
 }
@@ -7,12 +11,22 @@
 #area3{
 	background-color: orange;
 }
+#controller{
+	width:300px;
+	}
 .area {
 	text-align:center;
 	height:140px;
 	width:100px;
 	float:left;
 }
+#brush {
+	position:relative;
+	top:-120px;
+	left:120px;
+	float:left;
+}
+
 .darty {
 	margin-top:-140px;
 }

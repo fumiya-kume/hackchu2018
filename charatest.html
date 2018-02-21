@@ -8,22 +8,33 @@
 <!-- キャラクタ表示 -->
 
 <div id="chara" class="clear">
-<image src="images/baikin.png" width="300" height="" class="clear"></image>
+<image src="images/baikin.png" width="300" height="">
 </div>
+
 
 <!-- よごれ：テスト用　テスト終わったらAPI側の値で書き換える-->
 <div class="darty">
-<div id="baikin" class="clear">
-		<div id="area1" class="area" :style="{opacity: vArea1/100}">{{ vArea1/100 }}</div>
-		<div id="area2" class="area" :style="{opacity: vArea2/100}">{{ vArea2/100 }}</div>
-		<div id="area3" class="area" :style="{opacity: vArea3/100}">{{ vArea3/100 }}</div>
-	<div class="clear">
-		<input type="range" min="0" max="100" v-model.number="area1" />
-		<input type="range" min="0" max="100" v-model.number="area2" />
-		<input type="range" min="0" max="100" v-model.number="area3" />
+	<div id="baikin" class="clear">
+			<div id="area1" class="area" :style="{opacity: vArea1/100}"></div>
+			<div id="area2" class="area" :style="{opacity: vArea2/100}"></div>
+			<div id="area3" class="area" :style="{opacity: vArea3/100}"></div>
+		<div id="controller" class="clear">
+			赤透過（{{ vArea1/100 }}）<input type="range" min="0" max="100" v-model.number="area1" /><br />
+			青透過（{{ vArea2/100 }}）<input type="range" min="0" max="100" v-model.number="area2" /><br />
+			黄透過（{{ vArea3/100 }}）<input type="range" min="0" max="100" v-model.number="area3" /><br />
+			縦移動（{{ bVPos * -1}}）<input type="range" min="230" max="300" v-model.number="brushVpos" /><br />
+			横移動（{{ bHPos}}）<input type="range" min="15" max="215" v-model.number="brushHpos" />
+			
+		</div>
+
+	<!-- 歯ブラシオブジェクト -->
+	<div id="brush" class="clear" :style="{top: bVPos * -1,left: bHPos}">
+		<image src="images/brush.png" width="300" height="" />
+	</div>
 	</div>
 </div>
-</div>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -37,6 +48,8 @@ var vm = new Vue({
      area1:50,
      area2: 50,
      area3: 50,
+     brushVpos:230,
+     brushHpos:120,
    },
    computed: {
      vArea1: function() {
@@ -47,6 +60,12 @@ var vm = new Vue({
      },
      vArea3: function() {
        return this.area3
+     },
+     bVPos: function() {
+       return this.brushVpos
+     },
+     bHPos: function() {
+       return this.brushHpos
      },
    },
 
