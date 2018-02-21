@@ -1,60 +1,73 @@
 body{
-	background-color: #black;
+	background-color: gray;
 }
 
 #area1{
-	background-color: red;
+	background-color: black;
 	position:relative;
-	top:-120px;
-	left:120px;
+	top:-320px;
+	left:0px;
 }
 #area2{
-	background-color: blue;
+	background-color: black;
 	position:relative;
-	top:-120px;
-	left:120px;
+	top:-410px;
+	left:-35px;
 }
 #area3{
-	background-color: orange;
+	background-color: black;
 	position:relative;
-	top:-120px;
-	left:120px;
+	top:-460px;
+	left:-35px;
 }
 #area4{
-	background-color: red;
+	background-color: black;
 	position:relative;
-	top:-120px;
-	left:120px;
+	top:-460px;
+	left:-35px;
 }
 #area5{
-	background-color: blue;
+	background-color: black;
 	position:relative;
-	top:-120px;
-	left:120px;
+	top:-410px;
+	left:-30px;
 }
 #area6{
-	background-color: orange;
+	background-color: black;
 	position:relative;
-	top:-120px;
-	left:120px;
+	top:-320px;
+	left:-75px;
 }
 #controller{
+	position:relative;
+	top:50px;
 	width:300px;
 	}
 .area {
 	text-align:center;
-	height:140px;
-	width:70px;
+	height:80px;
+	width:80px;
 	float:left;
 }
-#brush {
+#logo {
+	background-color: black;
+	width:485px;
+	text-align:center;
+}
+.areaboth {
+	text-align:center;
+	height:110px;
+	width:90px;
+	float:left;
+}
+#own {
 	position:relative;
-	top:-120px;
+	top:-100px;
 	left:120px;
 	float:left;
 }
 
-.darty {
+.enemy {
 	margin-top:-140px;
 	position:relative;
 	left:30px;

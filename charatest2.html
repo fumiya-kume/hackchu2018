@@ -3,7 +3,11 @@
 <link rel ="stylesheet" href ="css/gyalaga.css" type="text/css" />
 </head>
 <body>
-<h1>Hello Baikin</h1>
+<!-- キャラクタ表示 -->
+
+<div id="logo">
+<image src="images/logo_galaga.png" width="250" height="" >
+</div>
 
 <!-- キャラクタ表示 -->
 
@@ -12,30 +16,30 @@
 </div>
 
 
-<!-- よごれ：テスト用　テスト終わったらAPI側の値で書き換える-->
-<div class="darty">
-	<div id="baikin" class="clear">
+<!-- エネミーマスク -->
+<div class="enemy">
+	<div id="gyalaga" class="clear">
 			<div id="area1" class="area" :style="{opacity: vArea1/100}">{{ vArea1/100 }}</div>
 			<div id="area2" class="area" :style="{opacity: vArea2/100}">{{ vArea2/100 }}</div>
-			<div id="area3" class="area" :style="{opacity: vArea3/100}">{{ vArea3/100 }}</div>
-			<div id="area4" class="area" :style="{opacity: vArea4/100}">{{ vArea4/100 }}</div>
+			<div id="area3" class="areaboth" :style="{opacity: vArea3/100}">{{ vArea3/100 }}</div>
+			<div id="area4" class="areaboth" :style="{opacity: vArea4/100}">{{ vArea4/100 }}</div>
 			<div id="area5" class="area" :style="{opacity: vArea5/100}">{{ vArea5/100 }}</div>
 			<div id="area6" class="area" :style="{opacity: vArea6/100}">{{ vArea6/100 }}</div>
 		<div id="controller" class="clear">
-			<input type="range" min="0" max="100" v-model.number="area1" />
-			<input type="range" min="0" max="100" v-model.number="area2" />
-			<input type="range" min="0" max="100" v-model.number="area3" />
-			<input type="range" min="0" max="100" v-model.number="area4" />
-			<input type="range" min="0" max="100" v-model.number="area5" />
-			<input type="range" min="0" max="100" v-model.number="area6" />
-			<input type="range" min="150" max="250" v-model.number="brushVpos" /><br />
-			{{ bVPos * -1}}
-			<input type="range" min="5" max="435" v-model.number="brushHpos" />
+			1群<input type="range" min="0" max="100" v-model.number="area1" /><br />
+			2群<input type="range" min="0" max="100" v-model.number="area2" /><br />
+			3群<input type="range" min="0" max="100" v-model.number="area3" /><br />
+			4群<input type="range" min="0" max="100" v-model.number="area4" /><br />
+			5群<input type="range" min="0" max="100" v-model.number="area5" /><br />
+			6群<input type="range" min="0" max="100" v-model.number="area6" /><br />
+			<!-- <input type="range" min="150" max="250" v-model.number="brushVpos" /><br />
+			{{ bVPos * -1}} -->
+			<input type="range" min="0" max="400" v-model.number="brushHpos" />
 			{{ bHPos}}
 		</div>
 
 	<!-- 歯ブラシオブジェクト -->
-	<div id="brush" class="clear" :style="{top: bVPos * -1,left: bHPos}">
+	<div id="own" class="clear" :style="{top: bVPos * -1,left: bHPos}">
 		<image src="images/gyal_own.png" width="48" height="" />
 	</div>
 	</div>
@@ -49,17 +53,17 @@
 
 // 歯のマスク処理用
 var vm = new Vue({
-   el: "#baikin",
+   el: "#gyalaga",
    data: {
      //area1: 1,
-     area1: 50,
-     area2: 50,
-     area3: 50,
-     area4: 50,
-     area5: 50,
-     area6: 50,
-     brushVpos:210,
-     brushHpos:210,
+     area1: 0,
+     area2: 0,
+     area3: 0,
+     area4: 0,
+     area5: 0,
+     area6: 0,
+     brushVpos:250,
+     brushHpos:200,
    },
    computed: {
      vArea1: function() {
