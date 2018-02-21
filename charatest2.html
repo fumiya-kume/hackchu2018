@@ -1,0 +1,96 @@
+<html>
+<head>
+<link rel ="stylesheet" href ="css/gyalaga.css" type="text/css" />
+</head>
+<body>
+<h1>Hello Baikin</h1>
+
+<!-- キャラクタ表示 -->
+
+<div id="chara" class="clear">
+<image src="images/gyal_back.png" width="485" height="">
+</div>
+
+
+<!-- よごれ：テスト用　テスト終わったらAPI側の値で書き換える-->
+<div class="darty">
+	<div id="baikin" class="clear">
+			<div id="area1" class="area" :style="{opacity: vArea1/100}">{{ vArea1/100 }}</div>
+			<div id="area2" class="area" :style="{opacity: vArea2/100}">{{ vArea2/100 }}</div>
+			<div id="area3" class="area" :style="{opacity: vArea3/100}">{{ vArea3/100 }}</div>
+			<div id="area4" class="area" :style="{opacity: vArea4/100}">{{ vArea4/100 }}</div>
+			<div id="area5" class="area" :style="{opacity: vArea5/100}">{{ vArea5/100 }}</div>
+			<div id="area6" class="area" :style="{opacity: vArea6/100}">{{ vArea6/100 }}</div>
+		<div id="controller" class="clear">
+			<input type="range" min="0" max="100" v-model.number="area1" />
+			<input type="range" min="0" max="100" v-model.number="area2" />
+			<input type="range" min="0" max="100" v-model.number="area3" />
+			<input type="range" min="0" max="100" v-model.number="area4" />
+			<input type="range" min="0" max="100" v-model.number="area5" />
+			<input type="range" min="0" max="100" v-model.number="area6" />
+			<input type="range" min="150" max="250" v-model.number="brushVpos" /><br />
+			{{ bVPos * -1}}
+			<input type="range" min="5" max="435" v-model.number="brushHpos" />
+			{{ bHPos}}
+		</div>
+
+	<!-- 歯ブラシオブジェクト -->
+	<div id="brush" class="clear" :style="{top: bVPos * -1,left: bHPos}">
+		<image src="images/gyal_own.png" width="48" height="" />
+	</div>
+	</div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+
+// 歯のマスク処理用
+var vm = new Vue({
+   el: "#baikin",
+   data: {
+     //area1: 1,
+     area1: 50,
+     area2: 50,
+     area3: 50,
+     area4: 50,
+     area5: 50,
+     area6: 50,
+     brushVpos:210,
+     brushHpos:210,
+   },
+   computed: {
+     vArea1: function() {
+       return this.area1
+     },
+     vArea2: function() {
+       return this.area2
+     },
+     vArea3: function() {
+       return this.area3
+     },
+     vArea4: function() {
+       return this.area4
+     },
+     vArea5: function() {
+       return this.area5
+     },
+     vArea6: function() {
+       return this.area6
+     },
+     bVPos: function() {
+       return this.brushVpos
+     },
+     bHPos: function() {
+       return this.brushHpos
+     },
+   },
+
+ });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+body{
+	background-color: #black;
+}
+
+#area1{
+	background-color: red;
+	position:relative;
+	top:-120px;
+	left:120px;
+}
+#area2{
+	background-color: blue;
+	position:relative;
+	top:-120px;
+	left:120px;
+}
+#area3{
+	background-color: orange;
+	position:relative;
+	top:-120px;
+	left:120px;
+}
+#area4{
+	background-color: red;
+	position:relative;
+	top:-120px;
+	left:120px;
+}
+#area5{
+	background-color: blue;
+	position:relative;
+	top:-120px;
+	left:120px;
+}
+#area6{
+	background-color: orange;
+	position:relative;
+	top:-120px;
+	left:120px;
+}
+#controller{
+	width:300px;
+	}
+.area {
+	text-align:center;
+	height:140px;
+	width:70px;
+	float:left;
+}
+#brush {
+	position:relative;
+	top:-120px;
+	left:120px;
+	float:left;
+}
+
+.darty {
+	margin-top:-140px;
+	position:relative;
+	left:30px;
+}
+.clear{
+	clear:both;
+}
