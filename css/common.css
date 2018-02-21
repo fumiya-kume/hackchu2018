@@ -1,0 +1,21 @@
+#area1{
+	background-color: red;
+}
+#area2{
+	background-color: blue;
+}
+#area3{
+	background-color: orange;
+}
+.area {
+	text-align:center;
+	height:140px;
+	width:100px;
+	float:left;
+}
+.darty {
+	margin-top:-140px;
+}
+.clear{
+	clear:both;
+}

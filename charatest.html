@@ -1,0 +1,58 @@
+<html>
+<head>
+<link rel ="stylesheet" href ="css/common.css" type="text/css" />
+</head>
+<body>
+<h1>Hello Baikin</h1>
+
+<!-- キャラクタ表示 -->
+
+<div id="chara" class="clear">
+<image src="images/baikin.png" width="300" height="" class="clear"></image>
+</div>
+
+<!-- よごれ：テスト用　テスト終わったらAPI側の値で書き換える-->
+<div class="darty">
+<div id="baikin" class="clear">
+		<div id="area1" class="area" :style="{opacity: vArea1/100}">{{ vArea1/100 }}</div>
+		<div id="area2" class="area" :style="{opacity: vArea2/100}">{{ vArea2/100 }}</div>
+		<div id="area3" class="area" :style="{opacity: vArea3/100}">{{ vArea3/100 }}</div>
+	<div class="clear">
+		<input type="range" min="0" max="100" v-model.number="area1" />
+		<input type="range" min="0" max="100" v-model.number="area2" />
+		<input type="range" min="0" max="100" v-model.number="area3" />
+	</div>
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+
+// 歯のマスク処理用
+var vm = new Vue({
+   el: "#baikin",
+   data: {
+     //area1: 1,
+     area1:50,
+     area2: 50,
+     area3: 50,
+   },
+   computed: {
+     vArea1: function() {
+       return this.area1
+     },
+     vArea2: function() {
+       return this.area2
+     },
+     vArea3: function() {
+       return this.area3
+     },
+   },
+
+ });
+
+</script>
+
+</body>
+</html>
