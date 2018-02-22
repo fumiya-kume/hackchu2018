@@ -5,29 +5,29 @@
 <body>
 <h1>Hello Baikin</h1>
 
-<!-- ƒLƒƒƒ‰ƒNƒ^•\¦ -->
+<!-- ã‚­ãƒ£ãƒ©ã‚¯ã‚¿è¡¨ç¤º -->
 
 <div id="chara" class="clear">
 <image src="images/baikin.png" width="300" height="">
 </div>
 
 
-<!-- ‚æ‚²‚êFƒeƒXƒg—p@ƒeƒXƒgI‚í‚Á‚½‚çAPI‘¤‚Ì’l‚Å‘‚«Š·‚¦‚é-->
+<!-- ã‚ˆã”ã‚Œï¼šãƒ†ã‚¹ãƒˆç”¨ã€€ãƒ†ã‚¹ãƒˆçµ‚ã‚ã£ãŸã‚‰APIå´ã®å€¤ã§æ›¸ãæ›ãˆã‚‹-->
 <div class="darty">
 	<div id="baikin" class="clear">
 			<div id="area1" class="area" :style="{opacity: vArea1/100}"></div>
 			<div id="area2" class="area" :style="{opacity: vArea2/100}"></div>
 			<div id="area3" class="area" :style="{opacity: vArea3/100}"></div>
 		<div id="controller" class="clear">
-			Ô“§‰ßi{{ vArea1/100 }}j<input type="range" min="0" max="100" v-model.number="area1" /><br />
-			Â“§‰ßi{{ vArea2/100 }}j<input type="range" min="0" max="100" v-model.number="area2" /><br />
-			‰©“§‰ßi{{ vArea3/100 }}j<input type="range" min="0" max="100" v-model.number="area3" /><br />
-			cˆÚ“®i{{ bVPos * -1}}j<input type="range" min="230" max="300" v-model.number="brushVpos" /><br />
-			‰¡ˆÚ“®i{{ bHPos}}j<input type="range" min="15" max="215" v-model.number="brushHpos" />
+			èµ¤é€éï¼ˆ{{ vArea1/100 }}ï¼‰<input type="range" min="0" max="100" v-model.number="area1" /><br />
+			é’é€éï¼ˆ{{ vArea2/100 }}ï¼‰<input type="range" min="0" max="100" v-model.number="area2" /><br />
+			é»„é€éï¼ˆ{{ vArea3/100 }}ï¼‰<input type="range" min="0" max="100" v-model.number="area3" /><br />
+			ç¸¦ç§»å‹•ï¼ˆ{{ bVPos * -1}}ï¼‰<input type="range" min="230" max="300" v-model.number="brushVpos" /><br />
+			æ¨ªç§»å‹•ï¼ˆ{{ bHPos}}ï¼‰<input type="range" min="15" max="215" v-model.number="brushHpos" />
 			
 		</div>
 
-	<!-- •ƒuƒ‰ƒVƒIƒuƒWƒFƒNƒg -->
+	<!-- æ­¯ãƒ–ãƒ©ã‚·ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ -->
 	<div id="brush" class="clear" :style="{top: bVPos * -1,left: bHPos}">
 		<image src="images/brush.png" width="300" height="" />
 	</div>
@@ -40,7 +40,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
 
-// •‚Ìƒ}ƒXƒNˆ——p
+// æ­¯ã®ãƒã‚¹ã‚¯å‡¦ç†ç”¨
 var vm = new Vue({
    el: "#baikin",
    data: {

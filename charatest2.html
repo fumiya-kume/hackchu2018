@@ -3,20 +3,20 @@
 <link rel ="stylesheet" href ="css/gyalaga.css" type="text/css" />
 </head>
 <body>
-<!-- ƒLƒƒƒ‰ƒNƒ^•\¦ -->
+<!-- ã‚­ãƒ£ãƒ©ã‚¯ã‚¿è¡¨ç¤º -->
 
 <div id="logo">
 <image src="images/logo_galaga.png" width="250" height="" >
 </div>
 
-<!-- ƒLƒƒƒ‰ƒNƒ^•\¦ -->
+<!-- ã‚­ãƒ£ãƒ©ã‚¯ã‚¿è¡¨ç¤º -->
 
 <div id="chara" class="clear">
 <image src="images/gyal_back.png" width="485" height="">
 </div>
 
 
-<!-- ƒGƒlƒ~[ƒ}ƒXƒN -->
+<!-- ã‚¨ãƒãƒŸãƒ¼ãƒã‚¹ã‚¯ -->
 <div class="enemy">
 	<div id="gyalaga" class="clear">
 			<div id="area1" class="area" :style="{opacity: vArea1/100}">{{ vArea1/100 }}</div>
@@ -26,19 +26,19 @@
 			<div id="area5" class="area" :style="{opacity: vArea5/100}">{{ vArea5/100 }}</div>
 			<div id="area6" class="area" :style="{opacity: vArea6/100}">{{ vArea6/100 }}</div>
 		<div id="controller" class="clear">
-			1ŒQ<input type="range" min="0" max="100" v-model.number="area1" /><br />
-			2ŒQ<input type="range" min="0" max="100" v-model.number="area2" /><br />
-			3ŒQ<input type="range" min="0" max="100" v-model.number="area3" /><br />
-			4ŒQ<input type="range" min="0" max="100" v-model.number="area4" /><br />
-			5ŒQ<input type="range" min="0" max="100" v-model.number="area5" /><br />
-			6ŒQ<input type="range" min="0" max="100" v-model.number="area6" /><br />
+			1ç¾¤<input type="range" min="0" max="100" v-model.number="area1" /><br />
+			2ç¾¤<input type="range" min="0" max="100" v-model.number="area2" /><br />
+			3ç¾¤<input type="range" min="0" max="100" v-model.number="area3" /><br />
+			4ç¾¤<input type="range" min="0" max="100" v-model.number="area4" /><br />
+			5ç¾¤<input type="range" min="0" max="100" v-model.number="area5" /><br />
+			6ç¾¤<input type="range" min="0" max="100" v-model.number="area6" /><br />
 			<!-- <input type="range" min="150" max="250" v-model.number="brushVpos" /><br />
 			{{ bVPos * -1}} -->
 			<input type="range" min="0" max="400" v-model.number="brushHpos" />
 			{{ bHPos}}
 		</div>
 
-	<!-- •ƒuƒ‰ƒVƒIƒuƒWƒFƒNƒg -->
+	<!-- æ­¯ãƒ–ãƒ©ã‚·ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ -->
 	<div id="own" class="clear" :style="{top: bVPos * -1,left: bHPos}">
 		<image src="images/gyal_own.png" width="48" height="" />
 	</div>
@@ -51,7 +51,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
 
-// •‚Ìƒ}ƒXƒNˆ——p
+// æ­¯ã®ãƒã‚¹ã‚¯å‡¦ç†ç”¨
 var vm = new Vue({
    el: "#gyalaga",
    data: {
