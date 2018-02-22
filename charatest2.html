@@ -1,100 +1,101 @@
-<html>
+Ôªø<html>
 <head>
-<link rel ="stylesheet" href ="css/gyalaga.css" type="text/css" />
+    <title>„ÇÆ„É£„É©„Ç¨„Çµ„É≥„Éó„É´</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/gyalaga.css" type="text/css" />
+    <meta charset="utf-8" />
 </head>
 <body>
-<!-- ÉLÉÉÉâÉNÉ^ï\é¶ -->
+    <!-- „Ç≠„É£„É©„ÇØ„ÇøË°®Á§∫ -->
 
-<div id="logo">
-<image src="images/logo_galaga.png" width="250" height="" >
-</div>
+    <div id="logo">
+        <image src="images/logo_galaga.png" width="250" height="" />
+    </div>
 
-<!-- ÉLÉÉÉâÉNÉ^ï\é¶ -->
+    <!-- „Ç≠„É£„É©„ÇØ„ÇøË°®Á§∫ -->
 
-<div id="chara" class="clear">
-<image src="images/gyal_back.png" width="485" height="">
-</div>
-
-
-<!-- ÉGÉlÉ~Å[É}ÉXÉN -->
-<div class="enemy">
-	<div id="gyalaga" class="clear">
-			<div id="area1" class="area" :style="{opacity: vArea1/100}">{{ vArea1/100 }}</div>
-			<div id="area2" class="area" :style="{opacity: vArea2/100}">{{ vArea2/100 }}</div>
-			<div id="area3" class="areaboth" :style="{opacity: vArea3/100}">{{ vArea3/100 }}</div>
-			<div id="area4" class="areaboth" :style="{opacity: vArea4/100}">{{ vArea4/100 }}</div>
-			<div id="area5" class="area" :style="{opacity: vArea5/100}">{{ vArea5/100 }}</div>
-			<div id="area6" class="area" :style="{opacity: vArea6/100}">{{ vArea6/100 }}</div>
-		<div id="controller" class="clear">
-			1åQ<input type="range" min="0" max="100" v-model.number="area1" /><br />
-			2åQ<input type="range" min="0" max="100" v-model.number="area2" /><br />
-			3åQ<input type="range" min="0" max="100" v-model.number="area3" /><br />
-			4åQ<input type="range" min="0" max="100" v-model.number="area4" /><br />
-			5åQ<input type="range" min="0" max="100" v-model.number="area5" /><br />
-			6åQ<input type="range" min="0" max="100" v-model.number="area6" /><br />
-			<!-- <input type="range" min="150" max="250" v-model.number="brushVpos" /><br />
-			{{ bVPos * -1}} -->
-			<input type="range" min="0" max="400" v-model.number="brushHpos" />
-			{{ bHPos}}
-		</div>
-
-	<!-- éïÉuÉâÉVÉIÉuÉWÉFÉNÉg -->
-	<div id="own" class="clear" :style="{top: bVPos * -1,left: bHPos}">
-		<image src="images/gyal_own.png" width="48" height="" />
-	</div>
-	</div>
-</div>
+    <div id="chara" class="clear">
+        <image src="images/gyal_back.png" width="485" height="" />
+    </div>
 
 
+    <!-- „Ç®„Éç„Éü„Éº„Éû„Çπ„ÇØ -->
+    <div class="enemy">
+        <div id="gyalaga" class="clear">
+            <div id="area1" class="area" :style="{opacity: vArea1}">{{ vArea1 }}</div>
+            <div id="area2" class="area" :style="{opacity: vArea2}">{{ vArea2 }}</div>
+            <div id="area3" class="areaboth" :style="{opacity: vArea3}">{{ vArea3 }}</div>
+            <div id="area4" class="areaboth" :style="{opacity: vArea4}">{{ vArea4 }}</div>
+            <div id="area5" class="area" :style="{opacity: vArea5}">{{ vArea5 }}</div>
+            <div id="area6" class="area" :style="{opacity: vArea6}">{{ vArea6 }}</div>
+            <div id="controller" class="clear">
+                1Áæ§<input type="range" min="0" max="100" v-model.number="area1" /><br />
+                2Áæ§<input type="range" min="0" max="100" v-model.number="area2" /><br />
+                3Áæ§<input type="range" min="0" max="100" v-model.number="area3" /><br />
+                4Áæ§<input type="range" min="0" max="100" v-model.number="area4" /><br />
+                5Áæ§<input type="range" min="0" max="100" v-model.number="area5" /><br />
+                6Áæ§<input type="range" min="0" max="100" v-model.number="area6" /><br />
+                <!-- <input type="range" min="150" max="250" v-model.number="brushVpos" /><br />
+                {{ bVPos * -1}} -->
+                <input type="range" min="0" max="400" v-model.number="brushHpos" />
+                {{ bHPos}}
+            </div>
+
+            <!-- Ê≠Ø„Éñ„É©„Ç∑„Ç™„Éñ„Ç∏„Çß„ÇØ„Éà -->
+            <div id="own" class="clear" :style="{top: bVPos * -1,left: bHPos}">
+                <image src="images/gyal_own.png" width="48" height="" />
+            </div>
+        </div>
+    </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script>
 
-// éïÇÃÉ}ÉXÉNèàóùóp
-var vm = new Vue({
-   el: "#gyalaga",
-   data: {
-     //area1: 1,
-     area1: 0,
-     area2: 0,
-     area3: 0,
-     area4: 0,
-     area5: 0,
-     area6: 0,
-     brushVpos:250,
-     brushHpos:200,
-   },
-   computed: {
-     vArea1: function() {
-       return this.area1
-     },
-     vArea2: function() {
-       return this.area2
-     },
-     vArea3: function() {
-       return this.area3
-     },
-     vArea4: function() {
-       return this.area4
-     },
-     vArea5: function() {
-       return this.area5
-     },
-     vArea6: function() {
-       return this.area6
-     },
-     bVPos: function() {
-       return this.brushVpos
-     },
-     bHPos: function() {
-       return this.brushHpos
-     },
-   },
 
- });
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
 
-</script>
+        // Ê≠Ø„ÅÆ„Éû„Çπ„ÇØÂá¶ÁêÜÁî®
+        var vm = new Vue({
+            el: "#gyalaga",
+            data: {
+                area1: 0,
+                area2: 0,
+                area3: 0,
+                area4: 0,
+                area5: 0,
+                area6: 0,
+                brushVpos: 250,
+                brushHpos: 200
+            },
+            computed: {
+                vArea1: function () {
+                    return this.area1 / 100;
+                },
+                vArea2: function () {
+                    return this.area2 / 100;
+                },
+                vArea3: function () {
+                    return this.area3 / 100;
+                },
+                vArea4: function () {
+                    return this.area4 / 100;
+                },
+                vArea5: function () {
+                    return this.area5 / 100;
+                },
+                vArea6: function () {
+                    return this.area6 / 100;
+                },
+                bVPos: function () {
+                    return this.brushVpos;
+                },
+                bHPos: function () {
+                    return this.brushHpos;
+                }
+            }
+        });
+
+    </script>
 
 </body>
 </html>
