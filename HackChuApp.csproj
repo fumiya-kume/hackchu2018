@@ -57,6 +57,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="apiary.apib" />
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -78,6 +79,8 @@
     <Content Include="images\gyaraga.png" />
     <Content Include="images\logo_galaga.png" />
     <Content Include="index.html" />
+    <Content Include="Scripts\vue.js" />
+    <Content Include="Scripts\vue.min.js" />
     <Content Include="test_aitalk.html" />
     <Content Include="Web.config" />
   </ItemGroup>
