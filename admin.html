@@ -1,0 +1,40 @@
+<html>
+<body>
+<h1>はみがきアプリ　パラメタ管理画面</h1>
+<p>動的に管理できると便利な値はここで管理しましょう</p>
+<h2>ロジック（担当：久米）</h2>
+
+<h2>IoTデバイス（担当：久米）</h2>
+
+<h2>音声（担当：杉浦）</h2>
+音声種別：<select name="XXX">
+<option value=“1”>男性の声
+<option value=“2”>女性の声
+<option value=“3” selected>子供の声
+</select><br />
+セリフ１：<input type="text" value="おはよう！きょうもげんきそうだね！" /><br />
+セリフ２：<input type="text" value="あかいろのところをみがいてね" /><br />
+セリフ３：<input type="text" value="あおいろのところをみがいてね" /><br />
+セリフ４：<input type="text" value="きいろのところをみがいてね" /><br />
+セリフ５：<input type="text" value="じょうずにできたね" /><br />
+
+<h2>UI/UX（担当：榊原）</h2>
+
+
+<h2>その他</h2>
+<a href="https://hackchu2018.azurewebsites.net/">メイン画面URL（未構築）</a>
+<a href="https://hackchu2018.azurewebsites.net/charatest.html">テスト画面URL（ばいきんまん）</a>
+<a href="https://hackchu2018.azurewebsites.net/test_aitalk.html">テスト画面URL（音声テスト用）</a>
+<a href="https://hackchu2018.azurewebsites.net/charatest2.html">テスト画面URL（ギャラガ）</a>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Hackathon! with Vue.JS'
+  }
+})
+</script>
+</body>
+</html>
