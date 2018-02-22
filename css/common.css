@@ -87,18 +87,18 @@ body{
 
 /* 歯ブラシ */
 #toothbrush {
-	position:relative;
-	top:0px;
+	position:absolute;
+	top:200px;
 	left:0px;
-	float:left;
 }
 
 #icontroller{
-	position:relative;
-	top:0px;
+	position:absolute;
+	top:800px;
 	width:90%;
 	margin:0 auto;
 	}
+
 /* 以下テスト用のため念のため保持 */
 #area1{
 	background-color: red;

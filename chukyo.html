@@ -28,27 +28,27 @@
 
 <div id="baikin">
 	<div id="idarty">
-		<div id="areaRed" class="iarea" :style="{opacity: vArea1/100}">
+		<div id="areaRed" class="iarea" :style="{opacity: vArea1}">
 			<image src="images/mask_red_left.png" width="100%" height="">
 		</div>
-		<div id="areaBlue" class="iarea" :style="{opacity: vArea2/100}">
+		<div id="areaBlue" class="iarea" :style="{opacity: vArea2}">
 			<image src="images/mask_blue_center.png" width="100%" height="">
 		</div>
-		<div id="areaYellow" class="iarea" :style="{opacity: vArea3/100}">
+		<div id="areaYellow" class="iarea" :style="{opacity: vArea3}">
 			<image src="images/mask_yellow_right.png" width="100%" height="">
 		</div>
 	</div>
 	<div id="icontroller" class="clear">
-		赤透過（{{ vArea1/100 }}）<input type="range" min="0" max="100" v-model.number="area1" /><br />
-		青透過（{{ vArea2/100 }}）<input type="range" min="0" max="100" v-model.number="area2" /><br />
-		黄透過（{{ vArea3/100 }}）<input type="range" min="0" max="100" v-model.number="area3" /><br />
-		縦移動（{{ bVPos * -1}}）<input type="range" min="230" max="300" v-model.number="brushVpos" /><br />
-		横移動（{{ bHPos}}）<input type="range" min="15" max="215" v-model.number="brushHpos" />
+		赤透過（{{ vArea1 }}）<input type="range" min="0" max="100" v-model.number="area1" /><br />
+		青透過（{{ vArea2 }}）<input type="range" min="0" max="100" v-model.number="area2" /><br />
+		黄透過（{{ vArea3 }}）<input type="range" min="0" max="100" v-model.number="area3" /><br />
+		縦移動（{{ bVPos}}）<input type="range" min="250" max="450" v-model.number="brushVpos" /><br />
+		横移動（{{ bHPos}}）<input type="range" min="200" max="650" v-model.number="brushHpos" />
 	</div>
 
 	<!-- 歯ブラシオブジェクト -->
-	<div id="toothbrush" class="clear" :style="{top: bVPos * -1,left: bHPos}">
-		<image src="images/brush.png" width="300" height="" />
+	<div id="toothbrush" :style="{top: bVPos ,left: bHPos}">
+		<image src="images/chukyo003.png" width="1000" height="" />
 	</div>
 </div>
 
@@ -68,21 +68,21 @@ var vm = new Vue({
      area1:50,
      area2: 50,
      area3: 50,
-     brushVpos:230,
-     brushHpos:120,
+     brushVpos:400,
+     brushHpos:425,
    },
    computed: {
      vArea1: function() {
-       return this.area1
+       return this.area1 / 100
      },
      vArea2: function() {
-       return this.area2
+         return this.area2 / 100
      },
      vArea3: function() {
-       return this.area3
+         return this.area3 / 100
      },
      bVPos: function() {
-       return this.brushVpos
+         return this.brushVpos
      },
      bHPos: function() {
        return this.brushHpos
