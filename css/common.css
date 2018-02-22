@@ -1,7 +1,105 @@
 body{
-	background-color: #eeeeff;
+	background-color: #000000;
+}
+/*全体のコンテナ*/
+#container{
+	text-align:center;
+	width:1000px;
+	position:relative;
+	top:0px;
+	left:0px;
 }
 
+/*背景*/
+#backgroundimage{
+	position:absolute;
+	width:100%;
+	top:0px;
+	left:0px;
+}
+
+/*文字表示エリア上*/
+#uppertextarea1{
+	text-align:center;
+	position:relative;
+	width:90%;
+	top:50px;
+	left:0px;
+	margin:0 auto;
+}
+/*文字表示エリア上*/
+#uppertextarea2{
+	text-align:center;
+	position:relative;
+	width:90%;
+	top:30px;
+	left:0px;
+	margin:0 auto;
+}
+
+/*キャラクタのコンテナ*/
+#chara{
+	position:relative;
+	width:90%
+	top:200px;
+	left:0px;
+	margin:0 auto;
+}
+
+/*　汚れのエリア
+.idarty {
+	position:absolute;
+	top:350px;
+	width:90%;
+	margin:auto;s
+}　*/
+#idarty {
+	background-color:red;
+	position:relative;
+	top:-450px;
+	left:122px;
+	width:90%;
+	margin:0 auto;
+}
+
+.iarea {
+	text-align:center;
+	float:left;
+}
+#areaRed{
+	position:relative;
+	top:5px;
+	width:210px;
+	height:270px;
+}
+#areaBlue{
+	position:relative;
+	top:0px;
+	width:247px;
+	height:265px;
+}
+#areaYellow{
+	position:relative;
+	top:0px;
+	width:213px;
+	height:270px;
+}
+
+/* 歯ブラシ */
+#toothbrush {
+	position:relative;
+	top:0px;
+	left:0px;
+	float:left;
+}
+
+#icontroller{
+	position:relative;
+	top:0px;
+	width:90%;
+	margin:0 auto;
+	}
+/* 以下テスト用のため念のため保持 */
 #area1{
 	background-color: red;
 }

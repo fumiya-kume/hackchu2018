@@ -1,0 +1,97 @@
+<html>
+<head>
+<link rel ="stylesheet" href ="css/common.css" type="text/css" />
+</head>
+<body>
+
+<!-- 全体のコンテナ ここから -->
+<div id="container">
+<div id="backgroundimage">
+	<image src="images/chukyo004_blured.png" width="100%" height="">
+</div>
+<!-- 上部テキストエリア１ -->
+<div id="uppertextarea1">
+	<h1>おはよう チュウキョ～くん</h1>
+</div>
+<!-- 上部テキストエリア２ -->
+<div id="uppertextarea2">
+	<h1>はみがきを はじめよう！</h1>
+</div>
+<!-- キャラクタ表示 -->
+
+<div id="chara">
+<image src="images/chukyo002.png" width="90%" height="">
+</div>
+
+
+<!-- よごれ：テスト用　テスト終わったらAPI側の値で書き換える-->
+
+<div id="baikin">
+	<div id="idarty">
+		<div id="areaRed" class="iarea" :style="{opacity: vArea1/100}">
+			<image src="images/mask_red_left.png" width="100%" height="">
+		</div>
+		<div id="areaBlue" class="iarea" :style="{opacity: vArea2/100}">
+			<image src="images/mask_blue_center.png" width="100%" height="">
+		</div>
+		<div id="areaYellow" class="iarea" :style="{opacity: vArea3/100}">
+			<image src="images/mask_yellow_right.png" width="100%" height="">
+		</div>
+	</div>
+	<div id="icontroller" class="clear">
+		赤透過（{{ vArea1/100 }}）<input type="range" min="0" max="100" v-model.number="area1" /><br />
+		青透過（{{ vArea2/100 }}）<input type="range" min="0" max="100" v-model.number="area2" /><br />
+		黄透過（{{ vArea3/100 }}）<input type="range" min="0" max="100" v-model.number="area3" /><br />
+		縦移動（{{ bVPos * -1}}）<input type="range" min="230" max="300" v-model.number="brushVpos" /><br />
+		横移動（{{ bHPos}}）<input type="range" min="15" max="215" v-model.number="brushHpos" />
+	</div>
+
+	<!-- 歯ブラシオブジェクト -->
+	<div id="toothbrush" class="clear" :style="{top: bVPos * -1,left: bHPos}">
+		<image src="images/brush.png" width="300" height="" />
+	</div>
+</div>
+
+
+<!-- 全体のコンテナ ここまで -->
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+
+// 歯のマスク処理用
+var vm = new Vue({
+   el: "#baikin",
+   data: {
+     //area1: 1,
+     area1:50,
+     area2: 50,
+     area3: 50,
+     brushVpos:230,
+     brushHpos:120,
+   },
+   computed: {
+     vArea1: function() {
+       return this.area1
+     },
+     vArea2: function() {
+       return this.area2
+     },
+     vArea3: function() {
+       return this.area3
+     },
+     bVPos: function() {
+       return this.brushVpos
+     },
+     bHPos: function() {
+       return this.brushHpos
+     },
+   },
+
+ });
+
+</script>
+
+</body>
+</html>
