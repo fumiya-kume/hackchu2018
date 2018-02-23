@@ -1,22 +1,173 @@
 <!DOCTYPE html>
-<html>
-    <body>
-
-    <form method="post" action="http://webapi.aitalk.jp/webapi/v2/ttsget.php">
-        <input type="hidden" name="username" value="aihack_ctv">
-        <input type="hidden" name="password" value="4XS9EwGd">
-        <input type="text" name="text" size="50" maxlength="50" >
-        <input type="hidden" name="speaker_name" value="koutarou">
-        <br/>
-        <input type="submit" value="push">
-    </form>
-
 <!--
-    <audio controls>
-        <source src="/Users/naomi-kishima/Downloads/5a8c2ff696acb7.93291303.ogg" type="audio/ogg">
-            Your browser does not support the audio element.
-    </audio>
+	**************************************************************
+	AICloud - AITalk WebAPI - 呼び出しサンプル JavaScript版
+
+	★利用の際は、AITalkWebAPIクラス内にあるID, PWの値を
+	　利用アカウントのID/PWに書き換えてください。
+	★Webサーバー, JavaScript環境の構築を事前に行ってください。
+	★次の環境で動作を確認しています。
+	　サーバー: Windows7 64bit, Apache 2.4
+	　クライアント: Windows7 64bit, Chrome Ver.64.0 / Firefox Ver.58.0
+	★呼び出し方
+	　Webサーバーに配備し、ブラウザからアクセスしてください。
+	★処理内容
+	　- WebAPIに文字列を投げて合成
+	　- 合成に失敗した場合はエラーメッセージを表示
+	　- 合成に成功した場合は再生プレイヤーから自動再生
+
+	本サンプルコードは、
+	AITalk WebAPIの呼び出し確認のためのサンプルプログラムです。
+	本サンプルコードの利用により、万一お客様に損害が生じたとしても、
+	当社はその損害について一切の責任を負いません。
+	本サンプルコードに不備があった場合でも、
+	当社は修正およびサポートの義務を負わないものとします。
+
+	Copyright (c) 2018 AI, Inc. (https://ai-j.jp/)
+	**************************************************************
 -->
-    
-    </body>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>AITalk WebAPI Sample (JavaScript)</title>
+	</head>
+	<body>
+		<!--
+		<div id="status">読み込み中です。</div>
+		-->
+		<form name="form1">
+			<input id="message" type="text" style="border:none;"　name="text" size="50" maxlength="50" value="ここのエリアに表示されたメッセージを話す">
+			<br/><br/>
+			<p>↓↓引数変更お試し↓↓　※上：発話したい文字 下：話者(nozomi_emoなど)</p>
+			<input id="test_text" type="text"　size="50" maxlength="50" value="引数変更して話す">
+			<br/>
+			<input id="test_speaker" type="text"　size="30" maxlength="30" value="koutarou">
+			<br/>
+			<input type="button" value="change" onclick="onButtonClick()">
+		</form>
+		<br/>
+		<audio id="audio" controls autoplay></audio>
+	</body>
+	<script>
+		// AITalk WebAPI を扱うクラス
+		function AITalkWebAPI()
+		{
+			this.URL = 'https://webapi.aitalk.jp/webapi/v2/ttsget.php';
+			this.ID = 'aihack_ctv';	// ユーザ名(接続ID)
+			this.PW = '4XS9EwGd';	// パスワード(接続パスワード)
+
+			this.username = this.ID;
+			this.password = this.PW;
+			this.speaker_name 	= 'nozomi_emo';		// 話者名
+			this.style 			= '{"j":"1.0"}'; 	// 感情パラメータ
+			this.input_type 	= 'text'; 			// 合成文字種別
+			this.text 			= ''; 				// 合成文字
+			this.volume 		= 1.0; 				// 音量（0.01-2.00）
+			this.speed 			= 1.0; 				// 話速（0.50-4.00）
+			this.pitch 			= 1.0; 				// ピッチ（0.50-2.00）
+			this.range 			= 1.0; 				// 抑揚（0.00-2.00）
+			this.output_type 	= 'sound'; 			// 出力形式
+			this.ext 			= 'mp3'; 			// 出力音声形式
+		}
+
+		// WebAPIに送るパラメータ文字列の取得
+		AITalkWebAPI.prototype.getEncodedParam = function() {
+			var query = {
+				'username'		: this.username,
+				'password'		: this.password,
+				'speaker_name'	: this.speaker_name,
+				'style'			: this.style,
+				'input_type'	: this.input_type,
+				'text'			: this.text,
+				'volume'		: this.volume,
+				'speed'			: this.speed,
+				'pitch'			: this.pitch,
+				'range'			: this.range,
+				'output_type'	: this.output_type,
+				'ext'			: this.ext,
+			};
+			// パラメータをエンコードして=で繋ぐ
+			var params = [];
+			for( key in query ) {
+				var param = '';
+				param += encodeURIComponent(key);
+				param += '=';
+				param += encodeURIComponent(query[key]);
+				params.push(param);
+			}
+			// 全てのパラメータを&で繋いで半角スペースを修正
+			return params.join('&').replace(/%20/g, '+');
+		};
+
+		// 音声合成
+		AITalkWebAPI.prototype.synth = function() {
+			var status = document.getElementById('status');
+			if( ! window.XMLHttpRequest ) {
+				status.innerHTML = "対応していないブラウザです。";
+				return;
+			}
+
+			var req;
+			req = new XMLHttpRequest();
+			req.responseType = "blob";
+			
+			// WebAPIのステータスが変更されたイベントハンドラ
+			req.onreadystatechange = function() {
+				if( req.readyState == XMLHttpRequest.DONE ) {
+					if( req.status != 200 ) {	// 合成エラー
+						var err_msg = "HTTPError, Code: " + req.status;
+						err_msg += ", " + req.statusText;
+						//status.innerHTML = err_msg;
+					} else {					// 合成成功
+						var audio = document.getElementById('audio');
+						audio.src = window.URL.createObjectURL(req.response);
+						//status.innerHTML = "合成に成功しました";
+					}
+				} else {						// 構成中
+					//status.innerHTML = "合成を実行しています";
+				}
+			};
+
+			// 通信
+			req.open('POST', this.URL, true);
+			req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			req.send(this.getEncodedParam());
+		}
+
+		// メイン処理
+		window.onload = function() {
+		 	// (1) 合成内容設定
+			var target_text = document.form1.message.value;
+
+			// (2) AITalkWebAPIを使うためのインスタンス作成
+			var aitalk = new AITalkWebAPI();
+
+			// (3) インスタンスに指定したいパラメータをセット
+			aitalk.text = target_text;
+			// aitalk.speaker_name = 'nozomi_emo';
+			// aitalk.style = '{"j":"1.0"}';
+
+			// (4) 合成
+			aitalk.synth();
+		};
+
+		// パラメータ指定 
+		function　talk(in_text, in_speaker){
+			var e = document.getElementById ('message');
+			e.value = in_text;
+
+			var aitalk = new AITalkWebAPI();
+
+			aitalk.text = in_text;
+			aitalk.speaker_name = in_speaker;
+			
+			aitalk.synth();
+		};
+
+		function onButtonClick(){
+			var text = document.form1.test_text.value;
+			var speaker = document.form1.test_speaker.value;;
+			talk(text, speaker);
+     	}
+	</script>
 </html>
