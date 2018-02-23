@@ -32,20 +32,7 @@
 		<title>AITalk WebAPI Sample (JavaScript)</title>
 	</head>
 	<body>
-		<!--
 		<div id="status">読み込み中です。</div>
-		-->
-		<form name="form1">
-			<input id="message" type="text" style="border:none;"　name="text" size="50" maxlength="50" value="ここのエリアに表示されたメッセージを話す">
-			<br/><br/>
-			<p>↓↓引数変更お試し↓↓　※上：発話したい文字 下：話者(nozomi_emoなど)</p>
-			<input id="test_text" type="text"　size="50" maxlength="50" value="引数変更して話す">
-			<br/>
-			<input id="test_speaker" type="text"　size="30" maxlength="30" value="koutarou">
-			<br/>
-			<input type="button" value="change" onclick="onButtonClick()">
-		</form>
-		<br/>
 		<audio id="audio" controls autoplay></audio>
 	</body>
 	<script>
@@ -117,14 +104,14 @@
 					if( req.status != 200 ) {	// 合成エラー
 						var err_msg = "HTTPError, Code: " + req.status;
 						err_msg += ", " + req.statusText;
-						//status.innerHTML = err_msg;
+						status.innerHTML = err_msg;
 					} else {					// 合成成功
 						var audio = document.getElementById('audio');
 						audio.src = window.URL.createObjectURL(req.response);
-						//status.innerHTML = "合成に成功しました";
+						status.innerHTML = "合成に成功しました";
 					}
 				} else {						// 構成中
-					//status.innerHTML = "合成を実行しています";
+					status.innerHTML = "合成を実行しています";
 				}
 			};
 
@@ -136,8 +123,9 @@
 
 		// メイン処理
 		window.onload = function() {
-		 	// (1) 合成内容設定
-			var target_text = document.form1.message.value;
+
+			// (1) 合成内容設定
+			var target_text = "こんにちは。今日はいい天気ですね♪";
 
 			// (2) AITalkWebAPIを使うためのインスタンス作成
 			var aitalk = new AITalkWebAPI();
@@ -147,27 +135,8 @@
 			// aitalk.speaker_name = 'nozomi_emo';
 			// aitalk.style = '{"j":"1.0"}';
 
-			// (4) 合成
+			// (3) 合成
 			aitalk.synth();
 		};
-
-		// パラメータ指定 
-		function　talk(in_text, in_speaker){
-			var e = document.getElementById ('message');
-			e.value = in_text;
-
-			var aitalk = new AITalkWebAPI();
-
-			aitalk.text = in_text;
-			aitalk.speaker_name = in_speaker;
-			
-			aitalk.synth();
-		};
-
-		function onButtonClick(){
-			var text = document.form1.test_text.value;
-			var speaker = document.form1.test_speaker.value;
-			talk(text, speaker);
-     	}
 	</script>
 </html>
