@@ -5,13 +5,15 @@ window.onload = function(){
   var milkcocoa = MilkCocoa.connectWithApiKey('bluejdx9pwg5.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
   var ds = milkcocoa.dataStore('toothbrush');
 
-　ds.on('send', function() {
-  alert("sendされました！");
+  ds.push({ title: "brushtest", content: 'stroke' });
+
+　ds.on('send', function(){
+     console.log('sendされました！');
   });
 
-　function sendMilkcocoa(){
-	ds.push({title : 'toothbrush', content : 'params'});
-  }
+　// function sendMilkcocoa(){
+  //	ds.push({title : 'toothbrush', content : 'params'});
+  // }
 
 };
 
