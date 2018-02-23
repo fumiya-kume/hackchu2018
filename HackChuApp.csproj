@@ -69,6 +69,7 @@
     <Content Include="admin.html" />
     <Content Include="charatest.html" />
     <Content Include="charatest2.html" />
+    <Content Include="chukyo.html" />
     <Content Include="css\common.css" />
     <Content Include="css\gyalaga.css" />
     <Content Include="images\baikin.png" />
@@ -79,6 +80,7 @@
     <Content Include="images\gyaraga.png" />
     <Content Include="images\logo_galaga.png" />
     <Content Include="index.html" />
+    <Content Include="Scripts\milkcocoaUI.js" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\vue.min.js" />
     <Content Include="test_aitalk.html" />
