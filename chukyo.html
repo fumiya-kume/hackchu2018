@@ -1,10 +1,12 @@
-<html>
+﻿<html>
 <head>
 	<title>チュウキョウくんと楽しくオモシロクはみがき！</title>
 	<meta charset="UTF-8" />
 	<link rel ="stylesheet" href ="css/common.css" type="text/css" />
 </head>
+
 <body>
+
 
 <!-- メインコンテナ-->
 <div id="container">
@@ -59,9 +61,8 @@
 <!-- メインコンテナ終わり -->
 </div>
 
-
 <script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
-<script src="Scripts/milkcocoa.js"></script>
+<!-- <script src="Scripts/milkcocoaUI.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
 
@@ -96,6 +97,27 @@ var vm = new Vue({
 
  });
 
+
+    function sendMilkcocoa() {
+        var milkcocoa = MilkCocoa.connectWithApiKey('bluejdx9pwg5.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
+        var ds = milkcocoa.dataStore('toothbrush');
+
+        ds.push({ title: "toothbrush", content: 'stroke' });
+    }
+
+    window.onload = function () {
+
+        // var image = document.getElementById('image');
+
+        var milkcocoa = MilkCocoa.connectWithApiKey('bluejdx9pwg5.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
+        var ds = milkcocoa.dataStore('toothbrush');
+        
+        　ds.on('send', function () {
+            console.log('sendされました！');
+        });
+
+
+    };
 </script>
 
 </body>
