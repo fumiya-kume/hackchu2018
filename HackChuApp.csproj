@@ -56,6 +56,7 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="aitalk_webapi_sample.html" />
     <Content Include="apiary.apib" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -68,11 +69,18 @@
     <Content Include="css\gyalaga.css" />
     <Content Include="images\baikin.png" />
     <Content Include="images\brush.png" />
+    <Content Include="images\chukyo001.png" />
+    <Content Include="images\chukyo002.png" />
+    <Content Include="images\chukyo003.png" />
+    <Content Include="images\chukyo004_blured.png" />
     <Content Include="images\gyal_back.png" />
     <Content Include="images\gyal_own.png" />
     <Content Include="images\gyal_shot.png" />
     <Content Include="images\gyaraga.png" />
     <Content Include="images\logo_galaga.png" />
+    <Content Include="images\mask_blue_center.png" />
+    <Content Include="images\mask_red_left.png" />
+    <Content Include="images\mask_yellow_right.png" />
     <Content Include="index.html" />
     <Content Include="Scripts\milkcocoaUI.js" />
     <Content Include="Scripts\vue.js" />
