@@ -6,7 +6,7 @@ window.onload = function(){
   var ds = milkcocoa.dataStore('toothbrush');
 
 　ds.on('send', function() {
-  alert('sendされました！');
+  alert("sendされました！");
   });
 
 　function sendMilkcocoa(){
