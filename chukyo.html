@@ -1,30 +1,32 @@
 <html>
 <head>
-<link rel ="stylesheet" href ="css/common.css" type="text/css" />
+    <title>ãƒãƒ¥ã‚¦ã‚­ãƒ§ã‚¦ãã‚“ã¨æ¥½ã—ãã‚ªãƒ¢ã‚·ãƒ­ã‚¯ã¯ã¿ãŒãï¼</title>
+    <meta charset="UTF-8" />
+	<link rel ="stylesheet" href ="css/common.css" type="text/css" />
 </head>
 <body>
 
-<!-- ‘S‘Ì‚ÌƒRƒ“ƒeƒi ‚±‚±‚©‚ç -->
+<!-- ãƒ¡ã‚¤ãƒ³ã‚³ãƒ³ãƒ†ãƒŠ-->
 <div id="container">
 <div id="backgroundimage">
 	<image src="images/chukyo004_blured.png" width="100%" height="">
 </div>
-<!-- ã•”ƒeƒLƒXƒgƒGƒŠƒA‚P -->
+<!-- ä¸Šéƒ¨ãƒ†ã‚­ã‚¹ãƒˆã‚¨ãƒªã‚¢1 -->
 <div id="uppertextarea1">
-	<h1>‚¨‚Í‚æ‚¤ ƒ`ƒ…ƒEƒLƒ‡`‚­‚ñ</h1>
+	<h1>ãŠã¯ã‚ˆã†ã¡ã‚…ã†ãã‚‡ã†ãã‚“ï¼</h1>
 </div>
-<!-- ã•”ƒeƒLƒXƒgƒGƒŠƒA‚Q -->
+<!-- ä¸Šéƒ¨ãƒ†ã‚­ã‚¹ãƒˆã‚¨ãƒªã‚¢ï¼’ -->
 <div id="uppertextarea2">
-	<h1>‚Í‚Ý‚ª‚«‚ð ‚Í‚¶‚ß‚æ‚¤I</h1>
+	<h1>ã„ã£ã—ã‚‡ã«ã¯ã¿ãŒãã‚’ã—ã‚ˆã†ï¼</h1>
 </div>
-<!-- ƒLƒƒƒ‰ƒNƒ^•\Ž¦ -->
+<!-- ã€€ -->
 
 <div id="chara">
 <image src="images/chukyo002.png" width="90%" height="">
 </div>
 
 
-<!-- ‚æ‚²‚êFƒeƒXƒg—p@ƒeƒXƒgI‚í‚Á‚½‚çAPI‘¤‚Ì’l‚Å‘‚«Š·‚¦‚é-->
+<!-- æ±šã‚Œã®è¡¨ç¾ -->
 
 <div id="baikin">
 	<div id="idarty">
@@ -39,28 +41,28 @@
 		</div>
 	</div>
 	<div id="icontroller" class="clear">
-		Ô“§‰ßi{{ vArea1 }}j<input type="range" min="0" max="100" v-model.number="area1" /><br />
-		Â“§‰ßi{{ vArea2 }}j<input type="range" min="0" max="100" v-model.number="area2" /><br />
-		‰©“§‰ßi{{ vArea3 }}j<input type="range" min="0" max="100" v-model.number="area3" /><br />
-		cˆÚ“®i{{ bVPos}}j<input type="range" min="250" max="450" v-model.number="brushVpos" /><br />
-		‰¡ˆÚ“®i{{ bHPos}}j<input type="range" min="200" max="650" v-model.number="brushHpos" />
+		èµ¤ï¼ˆå·¦ï¼‰{{ vArea1 }}ï¼š<input type="range" min="0" max="100" v-model.number="area1" /><br />
+		é’ï¼ˆä¸­ï¼‰{{ vArea2 }}ï¼š<input type="range" min="0" max="100" v-model.number="area2" /><br />
+		é»„ï¼ˆå³ï¼‰{{ vArea3 }}ï¼š<input type="range" min="0" max="100" v-model.number="area3" /><br />
+		ç¸¦ä½ç½®{{ bVPos}}ï¼šã€€<input type="range" min="250" max="450" v-model.number="brushVpos" /><br />
+		æ¨ªä½ç½®{{ bHPos}}ï¼šã€€<input type="range" min="200" max="650" v-model.number="brushHpos" />
 	</div>
 
-	<!-- Ž•ƒuƒ‰ƒVƒIƒuƒWƒFƒNƒg -->
+	<!-- æ­¯ãƒ–ãƒ©ã‚· -->
 	<div id="toothbrush" :style="{top: bVPos ,left: bHPos}">
 		<image src="images/chukyo003.png" width="1000" height="" />
 	</div>
 </div>
 
 
-<!-- ‘S‘Ì‚ÌƒRƒ“ƒeƒi ‚±‚±‚Ü‚Å -->
+<!-- ãƒ¡ã‚¤ãƒ³ã‚³ãƒ³ãƒ†ãƒŠçµ‚ã‚ã‚Š -->
 </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
 
-// Ž•‚Ìƒ}ƒXƒNˆ——p
+// å‡¦ç†
 var vm = new Vue({
    el: "#baikin",
    data: {
