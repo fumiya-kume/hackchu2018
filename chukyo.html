@@ -172,6 +172,11 @@ var vm = new Vue({
 				 this.vm.area3 -= 10;
 				 break;
 		 }
+		 
+		 //全部磨き終わったらページ遷移
+		 if(this.vm.area1 == 0 && this.vm.area2 == 0 && this.vm.area3 == 0){
+			 window.location.href = "https://hackchu2018.azurewebsites.net/chukyoEnd.html";
+		 }
 	});
 
 	    
