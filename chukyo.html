@@ -60,10 +60,10 @@
 
 <!-- メインコンテナ終わり -->
 </div>
-<!--
 <script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
--->
+<!--
 <script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+-->
 <!-- <script src="Scripts/milkcocoaUI.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
@@ -114,8 +114,8 @@ var vm = new Vue({
         // var image = document.getElementById('image');
 	console.log('onLoad');
 
-        var milkcocoa = new MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
-        var ds = milkcocoa.dataStore('ds_name');
+	var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
+	var ds = milkcocoa.dataStore('ds_name');
         
         　ds.on('send', function () {
             console.log('sendされました！');
@@ -127,7 +127,7 @@ var vm = new Vue({
 
 <!– milkcocoaのセットアップ –>
 <script>
-    //    var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
+    //    var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
 //	var ds = milkcocoa.dataStore('ds_name');
 	var milkcocoa = new MilkCocoa('iceje0w6n5p.mlkcca.com');
 	var datastore = milkcocoa.dataStore('ds_name');
