@@ -125,23 +125,6 @@ var vm = new Vue({
 	    console.log('pushed!', pushed.id, pushed.value);
 	});
 
-	ds.on('set', function(set) {
-	    console.log('set!', set.id, set.value);
-	});
-
-	ds.on('send', function(sent) {
-	    console.log('sent!', sent.value);
-	});
-
-	ds.on('remove', function(removed) {
-	    console.log('removed!', removed.id);
-	});
-
-	//どのユーザーがpushしてもon関数は実行される
-	ds.push({
-	    message : 'I am pushing.'
-	});
-
 	    
 
 
