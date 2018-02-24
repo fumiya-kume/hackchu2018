@@ -122,17 +122,31 @@ var vm = new Vue({
         });
 	    
 	 ds.on('push', function(pushed) {
-	    console.log('pushed!', pushed.id, pushed.value.area);
-		 this.vm.brushVpos = 20
+	    console.log('pushed!', pushed.id, pushed.value);
 		 
+		 switch (pushed.value.area){
+			 case 6:
+			 case 5:
 		 //area 6,5
 		 	//V 200, H360
-		 
+				 this.vm.brushVpos = 200;
+				 this.vm.brushHpos = 360;
+				 break;
+			 case 4:
+			 case 3:
 		 //area 4,3
 		 	//V 420, H360
-		 
+				 this.vm.brushVpos = 420;
+				 this.vm.brushHpos = 360;
+				 brea;
+			 case 2:
+			 case 1:
+			 case 0:
 		 //area 2,1,0
 		 	//V 645, H360
+				 this.vm.brushVpos = 645;
+				 this.vm.brushHpos = 360;
+				 break;
 	});
 
 	    
