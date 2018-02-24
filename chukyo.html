@@ -121,14 +121,33 @@ var vm = new Vue({
             console.log('pushされました！');
         });
 	    
-	  ds.on('push', changeViewFromSentMode);
+	 ds.on('push', function(pushed) {
+	    console.log('pushed!', pushed.id, pushed.value);
+	});
 
-  function changeViewFromSentMode(sent){
-    console.log('test');
-  }
+	ds.on('set', function(set) {
+	    console.log('set!', set.id, set.value);
+	});
+
+	ds.on('send', function(sent) {
+	    console.log('sent!', sent.value);
+	});
+
+	ds.on('remove', function(removed) {
+	    console.log('removed!', removed.id);
+	});
+
+	//どのユーザーがpushしてもon関数は実行される
+	ds.push({
+	    message : 'I am pushing.'
+	});
+
+	    
 
 
     };
+	
+
 </script>
 
 <!– milkcocoaのセットアップ –>
