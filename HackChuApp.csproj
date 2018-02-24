@@ -82,7 +82,9 @@
     <Content Include="images\mask_red_left.png" />
     <Content Include="images\mask_yellow_right.png" />
     <Content Include="index.html" />
+    <Content Include="Scripts\chukyo_talk.js" />
     <Content Include="Scripts\milkcocoaUI.js" />
+    <Content Include="Scripts\mirror_talk.js" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\vue.min.js" />
     <Content Include="test_aitalk.html" />
