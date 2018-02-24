@@ -123,7 +123,7 @@ var vm = new Vue({
 	    
 	 ds.on('push', function(pushed) {
 	    console.log('pushed!', pushed.id, pushed.value);
-		 bHPos = 20;
+		 this.vm.bHPos = 20;
 	});
 
 	    
