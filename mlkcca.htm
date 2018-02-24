@@ -1,0 +1,24 @@
+<html><head></head>
+<body>
+test
+
+<script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
+
+<script>
+
+import MilkCocoa from 'milkcocoa';
+const milkcocoa = new MilkCocoa("your-app-id.mlkcca.com");
+const ds = milkcocoa.dataStore('message');
+
+setInterval(()=>{
+  ds.send({v:1}, (err, sended) => {
+    console.log('送信:', sended);
+  });
+},2000);
+
+ds.on('send', (sended) => {
+  console.log('受信:',sended);
+});
+
+
+</script></body></html>
