@@ -5,20 +5,11 @@ test
 <script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
 
 <script>
+  
+  var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
+  var ds = milkcocoa.dataStore('messages');
+  ds.push({title : 'hoge', content : 'huga'});
 
-import MilkCocoa from 'milkcocoa';
-const milkcocoa = new MilkCocoa("iceje0w6n5p.mlkcca.com");
-const ds = milkcocoa.dataStore('ds_name');
-
-setInterval(()=>{
-  ds.send({v:1}, (err, sended) => {
-    console.log('送信:', sended);
-  });
-},2000);
-
-ds.on('send', (sended) => {
-  console.log('受信:',sended);
-});
 
 
 </script></body></html>
