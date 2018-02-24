@@ -122,8 +122,17 @@ var vm = new Vue({
         });
 	    
 	 ds.on('push', function(pushed) {
-	    console.log('pushed!', pushed.id, pushed.value);
+	    console.log('pushed!', pushed.id, pushed.value.area);
 		 this.vm.brushVpos = 20
+		 
+		 //area 6,5
+		 	//V 200, H360
+		 
+		 //area 4,3
+		 	//V 420, H360
+		 
+		 //area 2,1,0
+		 	//V 645, H360
 	});
 
 	    
