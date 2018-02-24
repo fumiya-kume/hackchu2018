@@ -117,11 +117,11 @@ var vm = new Vue({
 	var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
 	var ds = milkcocoa.dataStore('ds_name');
         
-        　ds.on('send', function () {
-            console.log('sendされました！');
+        　ds.on('push', function () {
+            console.log('pushされました！');
         });
 	    
-	  ds.on('send', changeViewFromSentMode);
+	  ds.on('push', changeViewFromSentMode);
 
   function changeViewFromSentMode(sent){
     console.log('test');
