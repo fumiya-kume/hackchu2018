@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title>チュウキョウくんと楽しくオモシロクはみがき！</title>
+	<meta charset="UTF-8" />
+	<link rel ="stylesheet" href ="css/common.css" type="text/css" />
+</head>
+
+<body>
+
+
+<!-- メインコンテナ-->
+<div id="container">
+<div id="backgroundimage">
+	<image src="images/chukyo004_blured.png" width="100%" height="">
+</div>
+<!-- 上部テキストエリア1 -->
+<div id="uppertextarea1">
+	<h1>おわった！</h1>
+</div>
+<!-- 上部テキストエリア２ -->
+<div id="uppertextarea1">
+	<h1>おわった！</h1>
+</div>
+<!-- 　 -->
+
+<div id="chara">
+<image src="images/chukyo002.png" width="90%" height="">
+</div>
+
+
+<!-- 汚れの表現 -->
+
+<div id="baikin">
+	<div id="icontroller" class="clear">
+		赤（左）{{ vArea1 }}：<input type="range" min="0" max="100" v-model.number="area1" /><br />
+		青（中）{{ vArea2 }}：<input type="range" min="0" max="100" v-model.number="area2" /><br />
+		黄（右）{{ vArea3 }}：<input type="range" min="0" max="100" v-model.number="area3" /><br />
+		縦位置{{ bVPos}}：　<input type="range" min="250" max="450" v-model.number="brushVpos" /><br />
+		横位置{{ bHPos}}：　<input type="range" min="200" max="650" v-model.number="brushHpos" />
+		milkcocoaTest：<input type="button" onClick="">
+	</div>
+
+	<!-- 歯ブラシ -->
+</div>
+
+
+<!-- メインコンテナ終わり -->
+</div>
+<script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
+<!--
+<script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+-->
+<!-- <script src="Scripts/milkcocoaUI.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+
+// 処理
+var vm = new Vue({
+   el: "#baikin",
+   data: {
+     //area1: 1,
+     area1:50,
+     area2: 50,
+     area3: 50,
+     brushVpos:400,
+     brushHpos:425,
+   }
+
+ });
+
+
+	
+
+</script>
+
+<!– milkcocoaのセットアップ –>
+
+		
+</body>
+</html>

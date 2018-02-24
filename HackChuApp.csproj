@@ -65,6 +65,7 @@
     <Content Include="charatest.html" />
     <Content Include="charatest2.html" />
     <Content Include="chukyo.html" />
+    <Content Include="chukyoEnd.html" />
     <Content Include="css\common.css" />
     <Content Include="css\gyalaga.css" />
     <Content Include="images\baikin.png" />
@@ -82,7 +83,10 @@
     <Content Include="images\mask_red_left.png" />
     <Content Include="images\mask_yellow_right.png" />
     <Content Include="index.html" />
+    <Content Include="mlkcca.htm" />
+    <Content Include="Scripts\chukyo_talk.js" />
     <Content Include="Scripts\milkcocoaUI.js" />
+    <Content Include="Scripts\mirror_talk.js" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\vue.min.js" />
     <Content Include="test_aitalk.html" />
