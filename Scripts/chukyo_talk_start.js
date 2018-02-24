@@ -156,17 +156,3 @@ function yellow() {
   // (4) 合成
   aitalk.synth();
 };
-
-function end() {
-  // (1) 合成内容設定
-  var target_text = "キレイになったよ！頑張ったね！よくできました？";
-
-  // (2) AITalkWebAPIを使うためのインスタンス作成
-  var aitalk = new AITalkWebAPI();
-
-  // (3) インスタンスに指定したいパラメータをセット
-  aitalk.text = target_text;
-
-  // (4) 合成
-  aitalk.synth();
-};
