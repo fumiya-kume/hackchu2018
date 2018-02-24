@@ -120,6 +120,12 @@ var vm = new Vue({
         　ds.on('send', function () {
             console.log('sendされました！');
         });
+	    
+	  ds.on('send', changeViewFromSentMode);
+
+  function changeViewFromSentMode(sent){
+    console.log('test');
+  }
 
 
     };
