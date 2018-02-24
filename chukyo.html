@@ -127,29 +127,34 @@ var vm = new Vue({
 		 switch (pushed.value.area){
 			 case 6:
 				 this.vm.brushHpos = 180;
-			 case 5:
-		 //area 6,5
-		 	//V 200, H360
-				 this.vm.brushHpos = 240;
 				 this.vm.brushVpos = 360;
 				 break;
+			 case 5:
+				 this.vm.brushHpos = 240;
+				 this.vm.brushVpos = 360;
+		 //area 6,5
+				 break;
 			 case 4:
+				 this.vm.brushVpos = 360;
 				 this.vm.brushHpos = 350;
+				 break;
 			 case 3:
-		 //area 4,3
-		 	//V 420, H360
+				 this.vm.brushVpos = 360;
 				 this.vm.brushHpos = 420;
+				 break;
 			 case 2:
 				 this.vm.brushHpos = 510;
 				 this.vm.brushVpos = 360;
+		 //area 4,3,2
 				 break;
 			 case 1:
+				 this.vm.brushVpos = 360;
 				 this.vm.brushHpos = 600;
+				 break;
 			 case 0:
-		 //area 2,1,0
-		 	//V 645, H360
 				 this.vm.brushHpos = 660;
 				 this.vm.brushVpos = 360;
+		 //area 1,0
 				 break;
 		 }
 	});
