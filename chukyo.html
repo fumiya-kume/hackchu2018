@@ -19,7 +19,7 @@
 </div>
 <!-- 上部テキストエリア２ -->
 <div id="uppertextarea2">
-	<h1>いっしょにはみがきをしよう！</h1>
+	<h1>いっしょにはみがきをしよう！!</h1>
 </div>
 <!-- 　 -->
 
@@ -99,8 +99,8 @@ var vm = new Vue({
 
 
     function sendMilkcocoa() {
-        var milkcocoa = MilkCocoa.connectWithApiKey('bluejdx9pwg5.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
-        var ds = milkcocoa.dataStore('toothbrush');
+        var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
+        var ds = milkcocoa.dataStore('ds_name');
 
         ds.push({ title: "toothbrush", content: 'stroke' });
     }
@@ -109,8 +109,8 @@ var vm = new Vue({
 
         // var image = document.getElementById('image');
 
-        var milkcocoa = MilkCocoa.connectWithApiKey('bluejdx9pwg5.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
-        var ds = milkcocoa.dataStore('toothbrush');
+        var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
+        var ds = milkcocoa.dataStore('ds_name');
         
         　ds.on('send', function () {
             console.log('sendされました！');
