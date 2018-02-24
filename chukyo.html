@@ -123,5 +123,17 @@ var vm = new Vue({
     };
 </script>
 
+<!– milkcocoaのセットアップ –>
+<script>
+        var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'PILCBGIODMIKICFL', 'iNVecMOSJGFmBTfOBKCffKRINJgADlfCVBlmPBKT');
+	var ds = milkcocoa.dataStore('ds_name');
+
+
+　　ds.on(‘send’, function(sent){
+　　　　console.log('ktkr');
+　　});
+
+</script>
+		
 </body>
 </html>
