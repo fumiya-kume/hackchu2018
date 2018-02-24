@@ -69,9 +69,11 @@ AITalkWebAPI.prototype.synth = function() {
         err_msg += ", " + req.statusText;
         //status.innerHTML = err_msg;
       } else {          // 合成成功
-        var audio = document.getElementById('audio');
-        audio.src = window.URL.createObjectURL(req.response);
+        //var audio = document.getElementById('audio');
+        //audio.src = window.URL.createObjectURL(req.response);
         //status.innerHTML = "合成に成功しました";
+        var audio = new Audio(window.URL.createObjectURL(req.response));
+        audio.play();
       }
     } else {            // 構成中
       //status.innerHTML = "合成を実行しています";
