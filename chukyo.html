@@ -124,6 +124,7 @@ var vm = new Vue({
 	 ds.on('push', function(pushed) {
 	    console.log('pushed!', pushed.id, pushed.value);
 		 
+		 //位置を変える
 		 switch (pushed.value.area){
 			 case 6:
 				 this.vm.brushHpos = 180;
@@ -132,7 +133,6 @@ var vm = new Vue({
 			 case 5:
 				 this.vm.brushHpos = 240;
 				 this.vm.brushVpos = 360;
-		 //area 6,5
 				 break;
 			 case 4:
 				 this.vm.brushVpos = 360;
@@ -145,7 +145,6 @@ var vm = new Vue({
 			 case 2:
 				 this.vm.brushHpos = 510;
 				 this.vm.brushVpos = 360;
-		 //area 4,3,2
 				 break;
 			 case 1:
 				 this.vm.brushVpos = 360;
@@ -154,7 +153,23 @@ var vm = new Vue({
 			 case 0:
 				 this.vm.brushHpos = 660;
 				 this.vm.brushVpos = 360;
-		 //area 1,0
+				 break;
+		 }
+		 
+		 //耐久値を減らしていく
+		 switch (pushed.value.area){
+			 case 6:
+			 case 5:
+				 this.vm.area1 -= 10;
+				 break;
+			 case 4:
+			 case 3:
+			 case 2:
+				 this.vm.area2 -= 10;
+				 break;
+			 case 1:
+			 case 0:
+				 this.vm.area3 -= 10;
 				 break;
 		 }
 	});
