@@ -65,6 +65,7 @@
     <Content Include="charatest.html" />
     <Content Include="charatest2.html" />
     <Content Include="chukyo.html" />
+    <Content Include="chukyoEnd.html" />
     <Content Include="css\common.css" />
     <Content Include="css\gyalaga.css" />
     <Content Include="images\baikin.png" />
