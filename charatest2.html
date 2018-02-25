@@ -107,6 +107,8 @@
         ds.on('push', function (pushed) {
             console.log('pushed!', pushed.id, pushed.value);
 
+            this.vm.brushVpos = 200;
+
             //位置を変える
             switch (pushed.value.area) {
                 case 6:
