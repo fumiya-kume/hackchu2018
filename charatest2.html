@@ -29,6 +29,7 @@
             <div id="area5" class="area" :style="{opacity: vArea5}">{{ vArea5 }}</div>
             <div id="area6" class="area" :style="{opacity: vArea6}">{{ vArea6 }}</div>
             <div id="controller" class="clear">
+                <input type="range" min="0" max="400" v-model.number="brushHpos" />
                 Score : {{ score}}  <BR><BR><BR><BR><BR>
                 1群<input type="range" min="0" max="100" v-model.number="area1" /><br />
                 2群<input type="range" min="0" max="100" v-model.number="area2" /><br />
@@ -38,7 +39,6 @@
                 6群<input type="range" min="0" max="100" v-model.number="area6" /><br />
                 <!-- <input type="range" min="150" max="250" v-model.number="brushVpos" /><br />
                 {{ bVPos * -1}} -->
-                <input type="range" min="0" max="400" v-model.number="brushHpos" />
                 {{ bHPos}}
             </div>
 
