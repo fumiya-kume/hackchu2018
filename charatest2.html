@@ -39,6 +39,7 @@
                 {{ bVPos * -1}} -->
                 <input type="range" min="0" max="400" v-model.number="brushHpos" />
                 {{ bHPos}}
+                {{ score}}
             </div>
 
             <!-- 歯ブラシオブジェクト -->
@@ -63,7 +64,8 @@
                 area5: 0,
                 area6: 0,
                 brushVpos: 250,
-                brushHpos: 200
+                brushHpos: 200,
+                score: 0,
             },
             computed: {
                 vArea1: function () {
@@ -154,6 +156,8 @@
                     this.vm.area7 += 10;
                     break;
             }
+            
+            score += 100;
 
             //全部磨き終わったらページ遷移
             if (this.vm.area1 <= 0 && this.vm.area2 <= 0 && this.vm.area3 <= 0 && this.vm.area4 <= 0 && this.vm.area5 <= 0 && this.vm.area6 <= 0 && this.vm.area7 <= 0) {
