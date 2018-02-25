@@ -95,6 +95,8 @@
 
         var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
         var ds = milkcocoa.dataStore('ds_name');
+        
+        console.log('koko');
 
         ds.on('push', function () {
             console.log('pushされました！');
