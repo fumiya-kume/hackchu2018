@@ -22,7 +22,6 @@
     <!-- エネミーマスク -->
     <div class="enemy">
         <div id="gyalaga" class="clear">
-            <!--
             <div id="area1" class="area" :style="{opacity: vArea1}">{{ vArea1 }}</div>
             <div id="area2" class="area" :style="{opacity: vArea2}">{{ vArea2 }}</div>
             <div id="area3" class="areaboth" :style="{opacity: vArea3}">{{ vArea3 }}</div>
@@ -30,6 +29,7 @@
             <div id="area5" class="area" :style="{opacity: vArea5}">{{ vArea5 }}</div>
             <div id="area6" class="area" :style="{opacity: vArea6}">{{ vArea6 }}</div>
             <div id="controller" class="clear">
+                Score : {{ score}}  <BR><BR><BR><BR><BR>
                 1群<input type="range" min="0" max="100" v-model.number="area1" /><br />
                 2群<input type="range" min="0" max="100" v-model.number="area2" /><br />
                 3群<input type="range" min="0" max="100" v-model.number="area3" /><br />
@@ -38,11 +38,8 @@
                 6群<input type="range" min="0" max="100" v-model.number="area6" /><br />
                 <!-- <input type="range" min="150" max="250" v-model.number="brushVpos" /><br />
                 {{ bVPos * -1}} -->
-            --><--
                 <input type="range" min="0" max="400" v-model.number="brushHpos" />
                 {{ bHPos}}
-              -->
-                {{ score}}
             </div>
 
             <!-- 歯ブラシオブジェクト -->
