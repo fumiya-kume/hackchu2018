@@ -68,6 +68,7 @@
     <Content Include="chukyoEnd.html" />
     <Content Include="css\common.css" />
     <Content Include="css\gyalaga.css" />
+    <Content Include="gyalaga.mp3" />
     <Content Include="images\baikin.png" />
     <Content Include="images\brush.png" />
     <Content Include="images\chukyo001.png" />
