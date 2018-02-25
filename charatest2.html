@@ -108,46 +108,50 @@
             //位置を変える
             switch (pushed.value.area) {
                 case 6:
-                    this.vm.brushVpos = 30;
+                    this.vm.brushHpos = 30;
                     break;
                 case 5:
-                    this.vm.brushVpos = 100;
+                    this.vm.brushHpos = 100;
                     break;
                 case 4:
-                    this.vm.brushVpos = 170;
+                    this.vm.brushHpos = 170;
                     break;
                 case 3:
-                    this.vm.brushVpos = 240;
+                    this.vm.brushHpos = 240;
                     break;
                 case 2:
-                    this.vm.brushVpos = 310;
+                    this.vm.brushHpos = 310;
                     break;
                 case 1:
-                    this.vm.brushVpos = 370;
+                    this.vm.brushHpos = 370;
                     break;
                 case 0:
-                    this.vm.brushVpos = 360;
+                    this.vm.brushHpos = 360;
                     break;
             }
 
             //耐久値を減らしていく
             switch (pushed.value.area) {
                 case 6:
-                    this.vm.area1 -= 10;
+                    this.vm.area1 += 10;
+                    break;
                 case 5:
-                    this.vm.area2 -= 10;
+                    this.vm.area2 += 10;
                     break;
                 case 4:
-                    this.vm.area3 -= 10;
+                    this.vm.area3 += 10;
+                    break;
                 case 3:
-                    this.vm.area4 -= 10;
+                    this.vm.area4 += 10;
+                    break;
                 case 2:
-                    this.vm.area5 -= 10;
+                    this.vm.area5 += 10;
                     break;
                 case 1:
-                    this.vm.area6 -= 10;
+                    this.vm.area6 += 10;
+                    break;
                 case 0:
-                    this.vm.area7 -= 10;
+                    this.vm.area7 += 10;
                     break;
             }
 
