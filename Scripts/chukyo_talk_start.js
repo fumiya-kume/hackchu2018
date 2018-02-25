@@ -86,20 +86,20 @@ AITalkWebAPI.prototype.synth = function() {
   req.send(this.getEncodedParam());
 }
 
-// メイン処理
-window.onload = function start() {
-  // (1) 合成内容設定
-  var target_text = "チュウキョーくんの歯を、キレイにしようね？";
+function start(){
+    // (1) 合成内容設定
+    var target_text = "チュウキョーくんの歯を、キレイにしようね？";
 
-  // (2) AITalkWebAPIを使うためのインスタンス作成
-  var aitalk = new AITalkWebAPI();
+    // (2) AITalkWebAPIを使うためのインスタンス作成
+    var aitalk = new AITalkWebAPI();
 
-  // (3) インスタンスに指定したいパラメータをセット
-  aitalk.text = target_text;
+    // (3) インスタンスに指定したいパラメータをセット
+    aitalk.text = target_text;
 
-  // (4) 合成
-  aitalk.synth();
-};
+    // (4) 合成
+    aitalk.synth();
+
+}
 
 function red() {
   // (1) 合成内容設定

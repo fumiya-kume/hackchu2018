@@ -1,183 +1,185 @@
-<html>
+﻿<html>
 <head>
-	<title>チュウキョウくんと楽しくオモシロクはみがき！</title>
-	<meta charset="UTF-8" />
-	<link rel ="stylesheet" href ="css/common.css" type="text/css" />
+    <title>チュウキョウくんと楽しくオモシロクはみがき！</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/common.css" type="text/css" />
 </head>
 
 <body>
 
 
-<!-- メインコンテナ-->
-<div id="container">
-<div id="backgroundimage">
-	<image src="images/chukyo004_blured.png" width="100%" height="">
-</div>
-<!-- 上部テキストエリア1 -->
-<div id="uppertextarea1">
-	<h1>おはようちゅうきょうくん！</h1>
-</div>
-<!-- 上部テキストエリア２ -->
-<div id="uppertextarea2">
-	<h1>いっしょにはみがきをしよう！!</h1>
-</div>
-<!-- 　 -->
+    <!-- メインコンテナ-->
+    <div id="container">
+        <div id="backgroundimage">
+            <image src="images/chukyo004_blured.png" width="100%" height="">
+        </div>
+        <!-- 上部テキストエリア1 -->
+        <div id="uppertextarea1">
+            <h1>おはようちゅうきょうくん！</h1>
+        </div>
+        <!-- 上部テキストエリア２ -->
+        <div id="uppertextarea2">
+            <h1>いっしょにはみがきをしよう！!</h1>
+        </div>
+        <!-- 　 -->
 
-<div id="chara">
-<image src="images/chukyo002.png" width="90%" height="">
-</div>
-
-
-<!-- 汚れの表現 -->
-
-<div id="baikin">
-	<div id="idarty">
-		<div id="areaRed" class="iarea" :style="{opacity: vArea1}">
-			<image src="images/mask_red_left.png" width="100%" height="">
-		</div>
-		<div id="areaBlue" class="iarea" :style="{opacity: vArea2}">
-			<image src="images/mask_blue_center.png" width="100%" height="">
-		</div>
-		<div id="areaYellow" class="iarea" :style="{opacity: vArea3}">
-			<image src="images/mask_yellow_right.png" width="100%" height="">
-		</div>
-	</div>
-	<div id="icontroller" class="clear">
-		赤（左）{{ vArea1 }}：<input type="range" min="0" max="100" v-model.number="area1" /><br />
-		青（中）{{ vArea2 }}：<input type="range" min="0" max="100" v-model.number="area2" /><br />
-		黄（右）{{ vArea3 }}：<input type="range" min="0" max="100" v-model.number="area3" /><br />
-		縦位置{{ bVPos}}：　<input type="range" min="250" max="450" v-model.number="brushVpos" /><br />
-		横位置{{ bHPos}}：　<input type="range" min="200" max="650" v-model.number="brushHpos" /><br />
-		milkcocoaTest：<input type="button" onClick="sendMilkcocoa();"><br />
-		<A HREF=https://hackchu2018.azurewebsites.net/chukyoEnd.html>nextpage</A>
-	</div>
-
-	<!-- 歯ブラシ -->
-	<div id="toothbrush" :style="{top: bVPos ,left: bHPos}">
-		<image src="images/chukyo003.png" width="1000" height="" />
-	</div>
-</div>
+        <div id="chara">
+            <image src="images/chukyo002.png" width="90%" height="">
+        </div>
 
 
-<!-- メインコンテナ終わり -->
-</div>
-<script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
-<!--
-<script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
--->
-<!-- <script src="Scripts/milkcocoaUI.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script>
-// 処理
-var vm = new Vue({
-   el: "#baikin",
-   data: {
-     //area1: 1,
-     area1:50,
-     area2: 50,
-     area3: 50,
-     brushVpos:400,
-     brushHpos:425,
-   },
-   computed: {
-     vArea1: function() {
-       return this.area1 / 100
-     },
-     vArea2: function() {
-         return this.area2 / 100
-     },
-     vArea3: function() {
-         return this.area3 / 100
-     },
-     bVPos: function() {
-         return this.brushVpos
-     },
-     bHPos: function() {
-       return this.brushHpos
-     },
-   },
- });
-    function sendMilkcocoa() {
-	var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
-        var ds = milkcocoa.dataStore('ds_name');
-        ds.push({ title: "toothbrush", content: 'stroke' });
-	
-	console.log('sendしました');
-    }
-    window.onload = function () {
-        // var image = document.getElementById('image');
-	console.log('onLoad');
-	var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
-	var ds = milkcocoa.dataStore('ds_name');
-        
-        　ds.on('push', function () {
-            console.log('pushされました！');
+        <!-- 汚れの表現 -->
+
+        <div id="baikin">
+            <div id="idarty">
+                <div id="areaRed" class="iarea" :style="{opacity: vArea1}">
+                    <image src="images/mask_red_left.png" width="100%" height="">
+                </div>
+                <div id="areaBlue" class="iarea" :style="{opacity: vArea2}">
+                    <image src="images/mask_blue_center.png" width="100%" height="">
+                </div>
+                <div id="areaYellow" class="iarea" :style="{opacity: vArea3}">
+                    <image src="images/mask_yellow_right.png" width="100%" height="">
+                </div>
+            </div>
+            <div id="icontroller" class="clear">
+                赤（左）{{ vArea1 }}：<input type="range" min="0" max="100" v-model.number="area1" /><br />
+                青（中）{{ vArea2 }}：<input type="range" min="0" max="100" v-model.number="area2" /><br />
+                黄（右）{{ vArea3 }}：<input type="range" min="0" max="100" v-model.number="area3" /><br />
+                縦位置{{ bVPos}}：　<input type="range" min="250" max="450" v-model.number="brushVpos" /><br />
+                横位置{{ bHPos}}：　<input type="range" min="200" max="650" v-model.number="brushHpos" /><br />
+                milkcocoaTest：<input type="button" onClick="sendMilkcocoa();"><br />
+                <A HREF=https://hackchu2018.azurewebsites.net/chukyoEnd.html>nextpage</A>
+            </div>
+
+            <!-- 歯ブラシ -->
+            <div id="toothbrush" :style="{top: bVPos ,left: bHPos}">
+                <image src="images/chukyo003.png" width="1000" height="" />
+            </div>
+        </div>
+
+
+        <!-- メインコンテナ終わり -->
+    </div>
+    <script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
+    <!--
+    <script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+    -->
+    <!-- <script src="Scripts/milkcocoaUI.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="Scripts/chukyo_talk_start.js"></script>
+    <script>
+        // 処理
+        var vm = new Vue({
+            el: "#baikin",
+            data: {
+                //area1: 1,
+                area1: 50,
+                area2: 50,
+                area3: 50,
+                brushVpos: 400,
+                brushHpos: 425,
+            },
+            computed: {
+                vArea1: function () {
+                    return this.area1 / 100
+                },
+                vArea2: function () {
+                    return this.area2 / 100
+                },
+                vArea3: function () {
+                    return this.area3 / 100
+                },
+                bVPos: function () {
+                    return this.brushVpos
+                },
+                bHPos: function () {
+                    return this.brushHpos
+                },
+            },
         });
-	    
-	 ds.on('push', function(pushed) {
-	    console.log('pushed!', pushed.id, pushed.value);
-		 
-		 //位置を変える
-		 switch (pushed.value.area){
-			 case 6:
-				 this.vm.brushHpos = 180;
-				 this.vm.brushVpos = 360;
-				 break;
-			 case 5:
-				 this.vm.brushHpos = 240;
-				 this.vm.brushVpos = 360;
-				 break;
-			 case 4:
-				 this.vm.brushVpos = 360;
-				 this.vm.brushHpos = 350;
-				 break;
-			 case 3:
-				 this.vm.brushVpos = 360;
-				 this.vm.brushHpos = 420;
-				 break;
-			 case 2:
-				 this.vm.brushHpos = 510;
-				 this.vm.brushVpos = 360;
-				 break;
-			 case 1:
-				 this.vm.brushVpos = 360;
-				 this.vm.brushHpos = 600;
-				 break;
-			 case 0:
-				 this.vm.brushHpos = 660;
-				 this.vm.brushVpos = 360;
-				 break;
-		 }
-		 
-		 //耐久値を減らしていく
-		 switch (pushed.value.area){
-			 case 6:
-			 case 5:
-				 this.vm.area1 -= 10;
-				 break;
-			 case 4:
-			 case 3:
-			 case 2:
-				 this.vm.area2 -= 10;
-				 break;
-			 case 1:
-			 case 0:
-				 this.vm.area3 -= 10;
-				 break;
-		 }
-		 
-		 //全部磨き終わったらページ遷移
-		 if(this.vm.area1 <= 0 && this.vm.area2 <= 0 && this.vm.area3 <= 0){
-			 window.location.href = "https://hackchu2018.azurewebsites.net/chukyoEnd.html";
-		 }
-	});
-	    
-    };
-	
-</script>
+        function sendMilkcocoa() {
+            var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
+            var ds = milkcocoa.dataStore('ds_name');
+            ds.push({ title: "toothbrush", content: 'stroke' });
 
-<!– milkcocoaのセットアップ –>
+            console.log('sendしました');
+        }
+        window.onload = function () {
+            start();
+            // var image = document.getElementById('image');
+            console.log('onLoad');
+            var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
+            var ds = milkcocoa.dataStore('ds_name');
 
-		
+            ds.on('push', function () {
+                console.log('pushされました！');
+            });
+
+            ds.on('push', function (pushed) {
+                console.log('pushed!', pushed.id, pushed.value);
+
+                //位置を変える
+                switch (pushed.value.area) {
+                    case 6:
+                        this.vm.brushHpos = 180;
+                        this.vm.brushVpos = 360;
+                        break;
+                    case 5:
+                        this.vm.brushHpos = 240;
+                        this.vm.brushVpos = 360;
+                        break;
+                    case 4:
+                        this.vm.brushVpos = 360;
+                        this.vm.brushHpos = 350;
+                        break;
+                    case 3:
+                        this.vm.brushVpos = 360;
+                        this.vm.brushHpos = 420;
+                        break;
+                    case 2:
+                        this.vm.brushHpos = 510;
+                        this.vm.brushVpos = 360;
+                        break;
+                    case 1:
+                        this.vm.brushVpos = 360;
+                        this.vm.brushHpos = 600;
+                        break;
+                    case 0:
+                        this.vm.brushHpos = 660;
+                        this.vm.brushVpos = 360;
+                        break;
+                }
+
+                //耐久値を減らしていく
+                switch (pushed.value.area) {
+                    case 6:
+                    case 5:
+                        this.vm.area1 -= 10;
+                        break;
+                    case 4:
+                    case 3:
+                    case 2:
+                        this.vm.area2 -= 10;
+                        break;
+                    case 1:
+                    case 0:
+                        this.vm.area3 -= 10;
+                        break;
+                }
+
+                //全部磨き終わったらページ遷移
+                if (this.vm.area1 <= 0 && this.vm.area2 <= 0 && this.vm.area3 <= 0) {
+                    window.location.href = "https://hackchu2018.azurewebsites.net/chukyoEnd.html";
+                }
+            });
+
+        };
+
+    </script>
+
+    <!– milkcocoaのセットアップ –>
+
+
 </body>
 </html>
