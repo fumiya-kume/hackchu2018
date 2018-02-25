@@ -48,10 +48,8 @@
         </div>
     </div>
 
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
     <script>
 
         // 歯のマスク処理用
@@ -92,6 +90,75 @@
                 bHPos: function () {
                     return this.brushHpos;
                 }
+            }
+        });
+
+        var milkcocoa = MilkCocoa.connectWithApiKey('iceje0w6n5p.mlkcca.com', 'IBOMAKKEKJGLBAML', 'AGabjXcTYPMSFCVfAbDfbmYmCfBNeQFAjFUcHWYh');
+        var ds = milkcocoa.dataStore('ds_name');
+
+        ds.on('push', function () {
+            console.log('pushされました！');
+        });
+
+        ds.on('push', function (pushed) {
+            console.log('pushed!', pushed.id, pushed.value);
+
+            //位置を変える
+            switch (pushed.value.area) {
+                case 6:
+                    this.vm.brushHpos = 180;
+                    this.vm.brushVpos = 360;
+                    break;
+                case 5:
+                    this.vm.brushHpos = 240;
+                    this.vm.brushVpos = 360;
+                    break;
+                case 4:
+                    this.vm.brushVpos = 360;
+                    this.vm.brushHpos = 350;
+                    break;
+                case 3:
+                    this.vm.brushVpos = 360;
+                    this.vm.brushHpos = 420;
+                    break;
+                case 2:
+                    this.vm.brushHpos = 510;
+                    this.vm.brushVpos = 360;
+                    break;
+                case 1:
+                    this.vm.brushVpos = 360;
+                    this.vm.brushHpos = 600;
+                    break;
+                case 0:
+                    this.vm.brushHpos = 660;
+                    this.vm.brushVpos = 360;
+                    break;
+            }
+
+            //耐久値を減らしていく
+            switch (pushed.value.area) {
+                case 6:
+                    this.vm.area1 -= 10;
+                case 5:
+                    this.vm.area2 -= 10;
+                    break;
+                case 4:
+                    this.vm.area3 -= 10;
+                case 3:
+                    this.vm.area4 -= 10;
+                case 2:
+                    this.vm.area5 -= 10;
+                    break;
+                case 1:
+                    this.vm.area6 -= 10;
+                case 0:
+                    this.vm.area7 -= 10;
+                    break;
+            }
+
+            //全部磨き終わったらページ遷移
+            if (this.vm.area1 <= 0 && this.vm.area2 <= 0 && this.vm.area3 <= 0 && this.vm.area4 <= 0 && this.vm.area5 <= 0 && this.vm.area6 <= 0 && this.vm.area7 <= 0) {
+                window.location.href = "https://hackchu2018.azurewebsites.net/chukyoEnd.html";
             }
         });
 
