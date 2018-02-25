@@ -67,6 +67,7 @@
 -->
 <!-- <script src="Scripts/milkcocoaUI.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="Scripts/chukyo_talk_start.js"/>
 <script>
 
 // 処理
@@ -78,7 +79,9 @@ var vm = new Vue({
      area2: 50,
      area3: 50,
      brushVpos:400,
-     brushHpos:425,
+     brushHpos: 425,
+     yellow:false,
+     blue: false
    },
    computed: {
      vArea1: function() {
@@ -172,8 +175,16 @@ var vm = new Vue({
 			 case 0:
 				 this.vm.area3 -= 10;
 				 break;
-		 }
-		 
+         }
+
+         if (!yello && this.vm.area2 <= 0) {
+             yellow = true;
+             yellow();
+         }
+         if (!blue && this.vm.area2 <= 0) {
+             blue = true;
+             blue();
+         }
 		 //全部磨き終わったらページ遷移
 		 if(this.vm.area1 <= 0 && this.vm.area2 <= 0 && this.vm.area3 <= 0){
 			 window.location.href = "https://hackchu2018.azurewebsites.net/chukyoEnd.html";
