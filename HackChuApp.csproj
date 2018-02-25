@@ -84,7 +84,8 @@
     <Content Include="images\mask_yellow_right.png" />
     <Content Include="index.html" />
     <Content Include="mlkcca.htm" />
-    <Content Include="Scripts\chukyo_talk.js" />
+    <Content Include="Scripts\chukyo_talk_end.js" />
+    <Content Include="Scripts\chukyo_talk_start.js" />
     <Content Include="Scripts\milkcocoaUI.js" />
     <Content Include="Scripts\mirror_talk.js" />
     <Content Include="Scripts\vue.js" />
